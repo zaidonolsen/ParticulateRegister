@@ -1,0 +1,19 @@
+﻿import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ParticulateProvider } from './context/ParticulateContext';
+import ParticulateList from './components/ParticulateList';
+import './App.css';
+
+function App() {
+    return (
+        <ParticulateProvider>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<ParticulateList />} />
+                    {/* TODO: Add routes for detail, edit, status update */}
+                </Routes>
+            </Router>
+        </ParticulateProvider>
+    );
+}
+
+export default App;

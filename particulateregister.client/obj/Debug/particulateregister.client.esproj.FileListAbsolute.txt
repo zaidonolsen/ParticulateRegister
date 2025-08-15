@@ -1,0 +1,1 @@
+C:\Workspace\ParticulateRegister\particulateregister.client\obj\Debug\particulateregister.client.esproj.CoreCompileInputs.cache

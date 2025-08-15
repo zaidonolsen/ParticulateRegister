@@ -1,0 +1,52 @@
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { fetchParticulates } from '../api/particulates';
+
+export interface Particulate {
+    id: string;
+    name: string;
+    alias: string;
+    type: string;
+    detectionStatus: string;
+    detectionNotes?: string;
+    history?: ParticulateHistory[];
+}
+
+export interface ParticulateHistory {
+    id: string;
+    date: string;
+    status: string;
+    notes?: string;
+}
+
+interface ParticulateContextType {
+    particulates: Particulate[];
+    setParticulates: React.Dispatch<React.SetStateAction<Particulate[]>>;
+    refresh: () => void;
+}
+
+const ParticulateContext = createContext<ParticulateContextType | undefined>(undefined);
+
+export const useParticulateContext = () => {
+    const ctx = useContext(ParticulateContext);
+    if (!ctx) throw new Error('ParticulateContext not found');
+    return ctx;
+};
+
+export const ParticulateProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const [particulates, setParticulates] = useState<Particulate[]>([]);
+
+    const refresh = async () => {
+        const data = await fetchParticulates();
+        setParticulates(data);
+    };
+
+    useEffect(() => {
+        refresh();
+    }, []);
+
+    return (
+        <ParticulateContext.Provider value={{ particulates, setParticulates, refresh }}>
+            {children}
+        </ParticulateContext.Provider>
+    );
+};

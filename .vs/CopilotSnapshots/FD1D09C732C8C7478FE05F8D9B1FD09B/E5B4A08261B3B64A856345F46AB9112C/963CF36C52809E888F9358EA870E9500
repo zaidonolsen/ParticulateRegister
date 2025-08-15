@@ -1,0 +1,50 @@
+﻿using Microsoft.EntityFrameworkCore;
+using ParticulateRegister.Domain.Interfaces;
+using ParticulateRegister.Domain.Models;
+
+namespace ParticulateRegister.Data.Repositories
+{
+    public class ParticulateRepository : IParticulateRepository
+    {
+        private readonly ParticulateDbContext _context;
+
+        public ParticulateRepository(ParticulateDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<IEnumerable<ParticulateDto>> GetAllAsync()
+            => await _context.Particulates.Include(p => p.History).ToListAsync();
+
+        public async Task<ParticulateDto?> GetByIdAsync(Guid id)
+            => await _context.Particulates.Include(p => p.History).FirstOrDefaultAsync(p => p.Id == id);
+
+        public async Task AddAsync(ParticulateDto particulate)
+        {
+            await _context.Particulates.AddAsync(particulate);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(ParticulateDto particulate)
+        {
+            _context.Particulates.Update(particulate);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            var entity = await _context.Particulates.FindAsync(id);
+            if (entity != null)
+            {
+                _context.Particulates.Remove(entity);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task AddHistoryAsync(ParticulateHistoryDto history)
+        {
+            await _context.ParticulateHistories.AddAsync(history);
+            await _context.SaveChangesAsync();
+        }
+    }
+}

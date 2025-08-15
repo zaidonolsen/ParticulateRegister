@@ -1,0 +1,43 @@
+﻿import type { Particulate, ParticulateHistory } from '../types/particulate';
+
+// API layer for particulates
+export async function fetchParticulates(): Promise<Particulate[]> {
+    const res = await fetch('/api/particulates');
+    if (!res.ok) throw new Error('Failed to fetch particulates');
+    return await res.json();
+}
+
+export async function fetchParticulate(id: string): Promise<Particulate> {
+    const res = await fetch(`/api/particulates/${id}`);
+    if (!res.ok) throw new Error('Failed to fetch particulate');
+    return await res.json();
+}
+
+export async function createParticulate(data: Partial<Particulate>): Promise<Particulate> {
+    const res = await fetch('/api/particulates', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('Failed to create particulate');
+    return await res.json();
+}
+
+export async function updateParticulate(id: string, data: Partial<Particulate>): Promise<void> {
+    const res = await fetch(`/api/particulates/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('Failed to update particulate');
+}
+
+export async function addParticulateHistory(id: string, history: Partial<ParticulateHistory>): Promise<ParticulateHistory> {
+    const res = await fetch(`/api/particulates/${id}/history`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(history)
+    });
+    if (!res.ok) throw new Error('Failed to add history');
+    return await res.json();
+}

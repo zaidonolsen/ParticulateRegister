@@ -1,0 +1,13 @@
+﻿using System;
+
+namespace ParticulateRegister.Data.Models
+{
+    public class ParticulateHistory
+    {
+        public Guid Id { get; set; }
+        public Guid ParticulateId { get; set; }
+        public DateTime Date { get; set; }
+        public DetectionStatus Status { get; set; }
+        public string Notes { get; set; } = string.Empty;
+    }
+}

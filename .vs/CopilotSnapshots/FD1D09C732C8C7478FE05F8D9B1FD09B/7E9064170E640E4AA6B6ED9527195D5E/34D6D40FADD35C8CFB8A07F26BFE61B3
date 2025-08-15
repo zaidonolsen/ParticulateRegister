@@ -1,0 +1,77 @@
+﻿using ParticulateRegister.Domain.Interfaces;
+using ParticulateRegister.Domain.Models;
+
+namespace ParticulateRegister.Domain.Services
+{
+    public class ParticulateService : IParticulateService
+    {
+        private readonly IParticulateRepository _repository;
+
+        public ParticulateService(IParticulateRepository repository)
+        {
+            _repository = repository;
+        }
+
+        public Task<IEnumerable<ParticulateDto>> GetAllAsync() => _repository.GetAllAsync();
+        public Task<ParticulateDto?> GetByIdAsync(Guid id) => _repository.GetByIdAsync(id);
+
+        public async Task AddAsync(ParticulateCreateDto dto)
+        {
+            var particulate = new ParticulateDto
+            {
+                Id = Guid.NewGuid(),
+                Name = dto.Name,
+                Aliases = dto.Aliases,
+                Description = dto.Description,
+                CropAssociations = dto.CropAssociations,
+                RegionAssociations = dto.RegionAssociations,
+                SeasonalAssociations = dto.SeasonalAssociations,
+                Type = dto.Type,
+                DetectionStatus = dto.DetectionStatus,
+                DetectionNotes = dto.DetectionNotes,
+                History = new List<ParticulateHistoryDto>
+                {
+                    new ParticulateHistoryDto
+                    {
+                        Id = Guid.NewGuid(),
+                        ParticulateId = particulate.Id,
+                        Date = DateTimeOffset.UtcNow,
+                        Status = dto.DetectionStatus,
+                        Notes = dto.DetectionNotes
+                    }
+                }
+            };
+            await _repository.AddAsync(particulate);
+        }
+
+        public async Task UpdateAsync(ParticulateUpdateDto dto)
+        {
+            var existing = await _repository.GetByIdAsync(dto.Id);
+            if (existing == null) return;
+            bool statusChanged = existing.DetectionStatus != dto.DetectionStatus || existing.DetectionNotes != dto.DetectionNotes;
+            existing.Name = dto.Name;
+            existing.Aliases = dto.Aliases;
+            existing.Description = dto.Description;
+            existing.CropAssociations = dto.CropAssociations;
+            existing.RegionAssociations = dto.RegionAssociations;
+            existing.SeasonalAssociations = dto.SeasonalAssociations;
+            existing.Type = dto.Type;
+            existing.DetectionStatus = dto.DetectionStatus;
+            existing.DetectionNotes = dto.DetectionNotes;
+            if (statusChanged)
+            {
+                existing.History.Add(new ParticulateHistoryDto
+                {
+                    Id = Guid.NewGuid(),
+                    ParticulateId = existing.Id,
+                    Date = DateTimeOffset.UtcNow,
+                    Status = dto.DetectionStatus,
+                    Notes = dto.DetectionNotes
+                });
+            }
+            await _repository.UpdateAsync(existing);
+        }
+
+        public Task DeleteAsync(Guid id) => _repository.DeleteAsync(id);
+    }
+}

@@ -1,0 +1,15 @@
+﻿using AutoMapper;
+using ParticulateRegister.Contracts.Models;
+using ParticulateRegister.Domain.Models;
+
+namespace ParticulateRegister.Server.Mapping
+{
+    public class ParticulateApiMappingProfile : Profile
+    {
+        public ParticulateApiMappingProfile()
+        {
+            CreateMap<ParticulateCreateApiModel, ParticulateCreateDto>();
+            CreateMap<ParticulateUpdateApiModel, ParticulateUpdateDto>();
+        }
+    }
+}

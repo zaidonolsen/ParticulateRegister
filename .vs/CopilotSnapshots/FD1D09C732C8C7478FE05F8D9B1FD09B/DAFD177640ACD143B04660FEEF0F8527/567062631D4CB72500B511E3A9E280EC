@@ -1,0 +1,14 @@
+﻿using ParticulateRegister.Data.Models;
+
+namespace ParticulateRegister.Domain.Services
+{
+    public interface IParticulateService
+    {
+        Task<IEnumerable<Particulate>> GetAllAsync();
+        Task<Particulate?> GetByIdAsync(Guid id);
+        Task AddAsync(Particulate particulate);
+        Task UpdateAsync(Particulate particulate);
+        Task DeleteAsync(Guid id);
+        Task SaveChangesAsync();
+    }
+}

@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Workspace\\ParticulateRegister\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D160A807-640C-0AB2-EF5C-A41ADB8D36A5}|particulateregister.client\\particulateregister.client.esproj|c:\\workspace\\particulateregister\\particulateregister.client\\src\\components\\particulatedetail.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{D160A807-640C-0AB2-EF5C-A41ADB8D36A5}|particulateregister.client\\particulateregister.client.esproj|solutionrelative:particulateregister.client\\src\\components\\particulatedetail.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D160A807-640C-0AB2-EF5C-A41ADB8D36A5}|particulateregister.client\\particulateregister.client.esproj|c:\\workspace\\particulateregister\\particulateregister.client\\src\\context\\particulatecontext.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{D160A807-640C-0AB2-EF5C-A41ADB8D36A5}|particulateregister.client\\particulateregister.client.esproj|solutionrelative:particulateregister.client\\src\\context\\particulatecontext.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ParticulateDetail.tsx",
+              "DocumentMoniker": "C:\\Workspace\\ParticulateRegister\\particulateregister.client\\src\\components\\ParticulateDetail.tsx",
+              "RelativeDocumentMoniker": "particulateregister.client\\src\\components\\ParticulateDetail.tsx",
+              "ToolTip": "C:\\Workspace\\ParticulateRegister\\particulateregister.client\\src\\components\\ParticulateDetail.tsx",
+              "RelativeToolTip": "particulateregister.client\\src\\components\\ParticulateDetail.tsx",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-08-15T10:02:28.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ParticulateContext.tsx",
+              "DocumentMoniker": "C:\\Workspace\\ParticulateRegister\\particulateregister.client\\src\\context\\ParticulateContext.tsx",
+              "RelativeDocumentMoniker": "particulateregister.client\\src\\context\\ParticulateContext.tsx",
+              "ToolTip": "C:\\Workspace\\ParticulateRegister\\particulateregister.client\\src\\context\\ParticulateContext.tsx",
+              "RelativeToolTip": "particulateregister.client\\src\\context\\ParticulateContext.tsx",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwB0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-08-15T09:56:35.288Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

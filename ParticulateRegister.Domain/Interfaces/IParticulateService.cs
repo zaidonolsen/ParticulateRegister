@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using ParticulateRegister.Domain.Models;
+
+namespace ParticulateRegister.Domain.Interfaces
+{
+    public interface IParticulateService
+    {
+        Task<IEnumerable<ParticulateDto>> GetAllAsync();
+        Task<ParticulateDto?> GetByIdAsync(Guid id);
+        Task AddAsync(ParticulateDto particulate);
+        Task UpdateAsync(ParticulateDto particulate);
+        Task DeleteAsync(Guid id);
+    }
+}

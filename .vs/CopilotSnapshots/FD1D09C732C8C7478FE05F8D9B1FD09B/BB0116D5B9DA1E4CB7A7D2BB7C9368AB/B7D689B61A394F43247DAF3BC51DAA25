@@ -1,0 +1,9 @@
+﻿using System;
+
+namespace ParticulateRegister.Domain.Models
+{
+    public class ParticulateUpdateDto : ParticulateBaseDto
+    {
+        public Guid Id { get; set; }
+    }
+}

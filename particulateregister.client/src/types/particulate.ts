@@ -1,0 +1,16 @@
+export interface ParticulateHistory {
+    id: string;
+    date: string;
+    status: string;
+    notes?: string;
+}
+
+export interface Particulate {
+    id: string;
+    name: string;
+    alias: string;
+    type: string;
+    detectionStatus: string;
+    detectionNotes?: string;
+    history?: ParticulateHistory[];
+}

@@ -1,0 +1,83 @@
+﻿import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useParticulateContext } from '../context/ParticulateContext';
+
+const ParticulateList: React.FC = () => {
+    const { particulates, refresh } = useParticulateContext();
+    const [search, setSearch] = useState('');
+    const [type, setType] = useState('');
+    const [status, setStatus] = useState('');
+    const navigate = useNavigate();
+
+    const filtered = particulates.filter(p =>
+        (p.name.toLowerCase().includes(search.toLowerCase()) ||
+         p.alias.toLowerCase().includes(search.toLowerCase())) &&
+        (type ? p.type === type : true) &&
+        (status ? p.detectionStatus === status : true)
+    );
+
+    // Collect unique types and statuses for filter dropdowns
+    const types = Array.from(new Set(particulates.map(p => p.type)));
+    const statuses = Array.from(new Set(particulates.map(p => p.detectionStatus)));
+
+    return (
+        <div className="container mt-4">
+            <h2>Particulate List</h2>
+            <div className="row mb-3">
+                <div className="col-md-4">
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Search by name or alias"
+                        value={search}
+                        onChange={e => setSearch(e.target.value)}
+                    />
+                </div>
+                <div className="col-md-3">
+                    <select className="form-select" value={type} onChange={e => setType(e.target.value)}>
+                        <option value="">All Types</option>
+                        {types.map(t => <option key={t} value={t}>{t}</option>)}
+                    </select>
+                </div>
+                <div className="col-md-3">
+                    <select className="form-select" value={status} onChange={e => setStatus(e.target.value)}>
+                        <option value="">All Statuses</option>
+                        {statuses.map(s => <option key={s} value={s}>{s}</option>)}
+                    </select>
+                </div>
+                <div className="col-md-2">
+                    <button className="btn btn-secondary w-100" onClick={refresh}>Refresh</button>
+                </div>
+            </div>
+            <button className="btn btn-success mb-3" onClick={() => navigate('/register')}>Register New Particulate</button>
+            <table className="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Alias</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {filtered.map(p => (
+                        <tr key={p.id}>
+                            <td>{p.name}</td>
+                            <td>{p.alias}</td>
+                            <td>{p.type}</td>
+                            <td>{p.detectionStatus}</td>
+                            <td>
+                                <button className="btn btn-primary btn-sm me-2" onClick={() => navigate(`/detail/${p.id}`)}>View</button>
+                                <button className="btn btn-warning btn-sm me-2" onClick={() => navigate(`/edit/${p.id}`)}>Edit</button>
+                                <button className="btn btn-info btn-sm" onClick={() => navigate(`/status/${p.id}`)}>Status</button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
+};
+
+export default ParticulateList;

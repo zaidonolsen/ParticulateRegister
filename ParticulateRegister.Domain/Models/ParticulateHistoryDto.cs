@@ -1,0 +1,15 @@
+using System;
+using ParticulateRegister.Contracts.Enums;
+
+namespace ParticulateRegister.Domain.Models
+{
+    public class ParticulateHistoryDto
+    {
+        public Guid Id { get; set; }
+        public Guid ParticulateId { get; set; }
+        public DateTimeOffset Date { get; set; }
+        public ParticulateType Type { get; set; }
+        public DetectionStatus Status { get; set; }
+        public string Notes { get; set; } = string.Empty;
+    }
+}

@@ -1,0 +1,112 @@
+﻿import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { createParticulate, updateParticulate, fetchParticulate } from '../api/particulates';
+import { fetchParticulateTypes, fetchDetectionStatuses } from '../api/enums';
+import { useParticulateContext } from '../context/ParticulateContext';
+import type { Particulate } from '../types/particulate';
+
+const defaultParticulate: Partial<Particulate> = {
+    name: '',
+    aliase: '',
+    type: '',
+    detectionStatus: '',
+    detectionNotes: '',
+};
+
+const ParticulateForm: React.FC = () => {
+    const { id } = useParams<{ id?: string }>();
+    const navigate = useNavigate();
+    const { refresh } = useParticulateContext();
+    const [form, setForm] = useState<Partial<Particulate>>(defaultParticulate);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+    const [types, setTypes] = useState<string[]>([]);
+    const [statuses, setStatuses] = useState<string[]>([]);
+
+    useEffect(() => {
+        fetchParticulateTypes()
+            .then(data => {
+                console.log("Particulate Types:", data);
+                setTypes(data);
+            })
+            .catch(err => console.error("Error fetching types:", err));
+
+        fetchDetectionStatuses()
+            .then(data => {
+                console.log("Detection Statuses:", data);
+                setStatuses(data);
+            })
+            .catch(err => console.error("Error fetching statuses:", err));
+    }, []);
+
+    useEffect(() => {
+        if (id) {
+            setLoading(true);
+            fetchParticulate(id)
+                .then(data => setForm(data))
+                .catch(e => setError(e.message))
+                .finally(() => setLoading(false));
+        }
+    }, [id]);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        try {
+            if (id) {
+                await updateParticulate(id, form);
+            } else {
+                await createParticulate(form);
+            }
+            await refresh();
+            navigate('/');
+        } catch (e: any) {
+            setError(e.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <div className="container mt-4">
+            <h2>{id ? 'Edit' : 'Register'} Particulate</h2>
+            {error && <div className="alert alert-danger">{error}</div>}
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                    <label className="form-label">Name</label>
+                    <input name="name" className="form-control" value={form.name || ''} onChange={handleChange} required />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Aliase</label>
+                    <input name="aliase" className="form-control" value={form.aliase || ''} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Type</label>
+                    <select name="type" className="form-select" value={form.type || ''} onChange={handleChange} required>
+                        <option value="">Select Type</option>
+                        {types.map(t => <option key={t} value={t}>{t}</option>)}
+                    </select>
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Status</label>
+                    <select name="detectionStatus" className="form-select" value={form.detectionStatus || ''} onChange={handleChange} required>
+                        <option value="">Select Status</option>
+                        {statuses.map(s => <option key={s} value={s}>{s}</option>)}
+                    </select>
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Notes</label>
+                    <textarea name="detectionNotes" className="form-control" value={form.detectionNotes || ''} onChange={handleChange} />
+                </div>
+                <button className="btn btn-primary" type="submit" disabled={loading}>{id ? 'Update' : 'Register'}</button>
+                <button className="btn btn-secondary ms-2" type="button" onClick={() => navigate('/')}>Cancel</button>
+            </form>
+        </div>
+    );
+};
+
+export default ParticulateForm;

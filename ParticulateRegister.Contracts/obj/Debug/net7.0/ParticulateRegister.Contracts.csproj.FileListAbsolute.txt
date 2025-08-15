@@ -1,0 +1,11 @@
+C:\Workspace\ParticulateRegister\ParticulateRegister.Contracts\bin\Debug\net7.0\ParticulateRegister.Contracts.deps.json
+C:\Workspace\ParticulateRegister\ParticulateRegister.Contracts\bin\Debug\net7.0\ParticulateRegister.Contracts.dll
+C:\Workspace\ParticulateRegister\ParticulateRegister.Contracts\bin\Debug\net7.0\ParticulateRegister.Contracts.pdb
+C:\Workspace\ParticulateRegister\ParticulateRegister.Contracts\obj\Debug\net7.0\ParticulateRegister.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\ParticulateRegister\ParticulateRegister.Contracts\obj\Debug\net7.0\ParticulateRegister.Contracts.AssemblyInfoInputs.cache
+C:\Workspace\ParticulateRegister\ParticulateRegister.Contracts\obj\Debug\net7.0\ParticulateRegister.Contracts.AssemblyInfo.cs
+C:\Workspace\ParticulateRegister\ParticulateRegister.Contracts\obj\Debug\net7.0\ParticulateRegister.Contracts.csproj.CoreCompileInputs.cache
+C:\Workspace\ParticulateRegister\ParticulateRegister.Contracts\obj\Debug\net7.0\ParticulateRegister.Contracts.dll
+C:\Workspace\ParticulateRegister\ParticulateRegister.Contracts\obj\Debug\net7.0\refint\ParticulateRegister.Contracts.dll
+C:\Workspace\ParticulateRegister\ParticulateRegister.Contracts\obj\Debug\net7.0\ParticulateRegister.Contracts.pdb
+C:\Workspace\ParticulateRegister\ParticulateRegister.Contracts\obj\Debug\net7.0\ref\ParticulateRegister.Contracts.dll

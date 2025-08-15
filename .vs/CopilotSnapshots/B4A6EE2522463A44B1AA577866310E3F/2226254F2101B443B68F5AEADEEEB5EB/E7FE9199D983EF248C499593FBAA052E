@@ -1,0 +1,70 @@
+﻿import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { fetchParticulate } from '../api/particulates';
+import type { Particulate } from '../types/particulate';
+
+const ParticulateDetail: React.FC = () => {
+    const { id } = useParams<{ id: string }>();
+    const [particulate, setParticulate] = useState<Particulate | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        async function load() {
+            try {
+                if (id) {
+                    const data = await fetchParticulate(id);
+                    setParticulate(data);
+                }
+            } catch (e: any) {
+                setError(e.message);
+            } finally {
+                setLoading(false);
+            }
+        }
+        load();
+    }, [id]);
+
+    if (loading) return <div className="container mt-4">Loading...</div>;
+    if (error) return <div className="container mt-4 text-danger">{error}</div>;
+    if (!particulate) return <div className="container mt-4">Not found</div>;
+
+    return (
+        <div className="container mt-4">
+            <h2>Particulate Detail</h2>
+            <div className="mb-3">
+                <strong>Name:</strong> {particulate.name}<br />
+                <strong>Alias:</strong> {particulate.alias}<br />
+                <strong>Type:</strong> {particulate.type}<br />
+                <strong>Status:</strong> {particulate.detectionStatus}<br />
+                <strong>Notes:</strong> {particulate.detectionNotes}<br />
+            </div>
+            <div className="mb-3">
+                <h4>History</h4>
+                <table className="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {particulate.history?.map(h => (
+                            <tr key={h.id}>
+                                <td>{new Date(h.date).toLocaleString()}</td>
+                                <td>{h.status}</td>
+                                <td>{h.notes}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            <Link to={`/edit/${particulate.id}`} className="btn btn-warning me-2">Edit</Link>
+            <Link to={`/status/${particulate.id}`} className="btn btn-info">Add Status</Link>
+            <Link to="/" className="btn btn-secondary ms-2">Back to List</Link>
+        </div>
+    );
+};
+
+export default ParticulateDetail;

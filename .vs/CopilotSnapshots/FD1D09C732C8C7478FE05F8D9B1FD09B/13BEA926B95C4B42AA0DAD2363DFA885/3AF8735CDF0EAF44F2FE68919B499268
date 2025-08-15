@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using ParticulateRegister.Data.Models;
+
+namespace ParticulateRegister.Data.Repositories
+{
+    public class ParticulateRepository : IParticulateRepository
+    {
+        private readonly ParticulateDbContext _context;
+
+        public ParticulateRepository(ParticulateDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<IEnumerable<Particulate>> GetAllAsync()
+            => await _context.Particulates.Include(p => p.History).ToListAsync();
+
+        public async Task<Particulate?> GetByIdAsync(Guid id)
+            => await _context.Particulates.Include(p => p.History).FirstOrDefaultAsync(p => p.Id == id);
+
+        public async Task AddAsync(Particulate particulate)
+            => await _context.Particulates.AddAsync(particulate);
+
+        public async Task UpdateAsync(Particulate particulate)
+            => _context.Particulates.Update(particulate);
+
+        public async Task DeleteAsync(Guid id)
+        {
+            var entity = await _context.Particulates.FindAsync(id);
+            if (entity != null) _context.Particulates.Remove(entity);
+        }
+
+        public async Task SaveChangesAsync()
+            => await _context.SaveChangesAsync();
+    }
+}

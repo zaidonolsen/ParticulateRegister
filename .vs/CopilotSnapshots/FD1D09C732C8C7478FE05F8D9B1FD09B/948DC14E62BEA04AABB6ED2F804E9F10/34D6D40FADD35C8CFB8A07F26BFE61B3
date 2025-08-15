@@ -1,0 +1,60 @@
+﻿using ParticulateRegister.Domain.Interfaces;
+using ParticulateRegister.Domain.Models;
+using AutoMapper;
+
+namespace ParticulateRegister.Domain.Services
+{
+    public class ParticulateService : IParticulateService
+    {
+        private readonly IParticulateRepository _repository;
+        private readonly IMapper _mapper;
+
+        public ParticulateService(IParticulateRepository repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
+
+        public Task<IEnumerable<ParticulateDto>> GetAllAsync() => _repository.GetAllAsync();
+        public Task<ParticulateDto?> GetByIdAsync(Guid id) => _repository.GetByIdAsync(id);
+
+        public async Task AddAsync(ParticulateDto particulate)
+        {
+            particulate.Id = Guid.NewGuid();
+            particulate.History = new List<ParticulateHistoryDto>
+            {
+                new ParticulateHistoryDto
+                {
+                    Id = Guid.NewGuid(),
+                    ParticulateId = particulate.Id,
+                    Date = DateTimeOffset.UtcNow,
+                    Status = particulate.DetectionStatus,
+                    Notes = particulate.DetectionNotes
+                }
+            };
+            await _repository.AddAsync(particulate);
+        }
+
+        public async Task UpdateAsync(ParticulateDto particulate)
+        {
+            var existing = await _repository.GetByIdAsync(particulate.Id);
+            if (existing == null) return;
+            bool statusChanged = existing.DetectionStatus != particulate.DetectionStatus || existing.DetectionNotes != particulate.DetectionNotes;
+            _mapper.Map(particulate, existing);
+            if (statusChanged)
+            {
+                existing.History.Add(new ParticulateHistoryDto
+                {
+                    Id = Guid.NewGuid(),
+                    ParticulateId = existing.Id,
+                    Date = DateTimeOffset.UtcNow,
+                    Status = particulate.DetectionStatus,
+                    Notes = particulate.DetectionNotes
+                });
+            }
+            await _repository.UpdateAsync(existing);
+        }
+
+        public Task DeleteAsync(Guid id) => _repository.DeleteAsync(id);
+    }
+}

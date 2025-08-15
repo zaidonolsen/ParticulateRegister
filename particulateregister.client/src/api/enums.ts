@@ -1,0 +1,12 @@
+// API calls for enum values
+export async function fetchParticulateTypes(): Promise<string[]> {
+    const res = await fetch('/api/enums/particulate-types');
+    if (!res.ok) throw new Error('Failed to fetch particulate types');
+    return await res.json();
+}
+
+export async function fetchDetectionStatuses(): Promise<string[]> {
+    const res = await fetch('/api/enums/detection-statuses');
+    if (!res.ok) throw new Error('Failed to fetch detection statuses');
+    return await res.json();
+}

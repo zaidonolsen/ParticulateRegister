@@ -1,0 +1,99 @@
+﻿# Particulate Register
+
+This repository contains a full-stack application for managing and tracking particulates, including their types, detection statuses, and historical changes. The solution is built with .NET 7 for the backend and React/TypeScript for the frontend.
+
+## Projects
+
+- **ParticulateRegister.Server**: ASP.NET Core Web API backend.
+- **ParticulateRegister.Domain**: Domain models, services, and business logic.
+- **ParticulateRegister.Data**: Data access layer and Entity Framework context.
+- **ParticulateRegister.Contracts**: Shared contracts and enums for API models.
+- **particulateregister.client**: React + TypeScript frontend client.
+
+## Features
+
+- Register, view, edit, and delete particulates.
+- Track particulate type and detection status (enum-based).
+- Maintain history of status/type changes.
+- Search and filter particulates in the client UI.
+- Responsive and modern UI with improved layout and accessibility.
+
+## Proof of Concept (POC)
+
+- The backend uses an **in-memory database** for demonstration and testing purposes. This allows rapid prototyping and does not persist data between application restarts.
+
+## Enum Value Management
+
+- Enum values for particulate type and detection status are **not cached** in a React context or global state (e.g., Redux). Each client component fetches these values independently from the backend, which may result in redundant API calls. For production, caching these values in a context or global state is recommended for efficiency.
+
+## Getting Started
+
+### Prerequisites
+- [.NET 7 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
+- [Node.js & npm](https://nodejs.org/)
+- [Visual Studio 2022 or later](https://visualstudio.microsoft.com/)
+
+### Running the Project
+- You can run the entire solution directly from **Visual Studio** by opening the solution file and pressing `F5` (Start Debugging). This will start both the backend and frontend projects automatically, without needing to use the command line.
+
+### Backend Setup (Command Line Option)
+1. Navigate to the backend directory:
+   ```sh
+   cd ParticulateRegister.Server
+   ```
+2. Restore dependencies and run the server:
+   ```sh
+   dotnet restore
+   dotnet run
+   ```
+
+### Frontend Setup (Command Line Option)
+1. Navigate to the client directory:
+   ```sh
+   cd particulateregister.client
+   ```
+2. Install dependencies and start the client:
+   ```sh
+   npm install
+   npm run dev
+   ```
+
+### Usage
+- Access the client UI at `http://localhost:5173` (or the port shown in your terminal).
+- The backend API runs at `https://localhost:7034` by default.
+
+## API Endpoints
+- `GET /api/particulates` - List all particulates
+- `GET /api/particulates/{id}` - Get particulate by ID
+- `POST /api/particulates` - Create a new particulate
+- `PUT /api/particulates/{id}` - Update a particulate
+- `DELETE /api/particulates/{id}` - Delete a particulate
+- `GET /api/enums/particulate-types` - Get particulate types
+- `GET /api/enums/detection-statuses` - Get detection statuses
+
+## Development Notes
+- Enum values are mapped between backend (number) and frontend (string) for user-friendly display.
+- History tracking is automatic on status/type/note changes.
+- UI components are styled for clarity and accessibility.
+
+## Assumptions
+- The application is intended as a proof of concept and uses an in-memory database for backend storage.
+- Enum values are fetched from the backend on each component mount and are not cached in the frontend.
+- The backend and frontend are run locally and communicate over HTTP/HTTPS.
+- No authentication or authorization is implemented.
+- Data is not persisted between application restarts.
+
+## Prioritization & Stubs
+- **Prioritized:** Core CRUD features, enum mapping, history tracking, and a clean UI for demonstration.
+- **Stubbed/Skipped:**
+  - Authentication and authorization (not implemented).
+  - Persistent database (using in-memory for POC).
+  - Advanced error handling and validation (basic only).
+  - Caching of enum values in frontend (not implemented).
+  - Production deployment scripts and configuration.
+  - Accessibility and internationalization (basic only).
+  - Any features not directly related to particulate management.
+- If you need any of these features, please specify and they can be added or extended.
+
+## License
+This project is open source and available under the MIT License.

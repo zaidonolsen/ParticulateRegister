@@ -1,0 +1,58 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using ParticulateRegister.Data.Models;
+using ParticulateRegister.Data.Repositories;
+
+namespace ParticulateRegister.Server.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ParticulatesController : ControllerBase
+    {
+        private readonly IParticulateRepository _repository;
+
+        public ParticulatesController(IParticulateRepository repository)
+        {
+            _repository = repository;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var particulates = await _repository.GetAllAsync();
+            return Ok(particulates);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var particulate = await _repository.GetByIdAsync(id);
+            if (particulate == null) return NotFound();
+            return Ok(particulate);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] Particulate particulate)
+        {
+            await _repository.AddAsync(particulate);
+            await _repository.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetById), new { id = particulate.Id }, particulate);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] Particulate particulate)
+        {
+            if (id != particulate.Id) return BadRequest();
+            await _repository.UpdateAsync(particulate);
+            await _repository.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _repository.DeleteAsync(id);
+            await _repository.SaveChangesAsync();
+            return NoContent();
+        }
+    }
+}

@@ -1,0 +1,13 @@
+﻿using AutoMapper;
+using ParticulateRegister.Domain.Models;
+
+namespace ParticulateRegister.Server.Mapping
+{
+    public class ParticulateMappingProfile : Profile
+    {
+        public ParticulateMappingProfile()
+        {
+            CreateMap<ParticulateDto, ParticulateDto>().ReverseMap();
+        }
+    }
+}

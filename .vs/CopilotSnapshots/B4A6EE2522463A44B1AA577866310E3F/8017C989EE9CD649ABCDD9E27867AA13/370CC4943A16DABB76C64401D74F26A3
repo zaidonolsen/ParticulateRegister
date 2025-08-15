@@ -1,0 +1,99 @@
+﻿import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { fetchParticulate } from '../api/particulates';
+import { fetchParticulateTypes, fetchDetectionStatuses } from '../api/enums';
+import type { Particulate } from '../types/particulate';
+
+const ParticulateDetail: React.FC = () => {
+    const { id } = useParams<{ id: string }>();
+    const [particulate, setParticulate] = useState<Particulate | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+    const [types, setTypes] = useState<string[]>([]);
+    const [statuses, setStatuses] = useState<string[]>([]);
+
+    useEffect(() => {
+        fetchParticulateTypes().then(setTypes);
+        fetchDetectionStatuses().then(setStatuses);
+    }, []);
+
+    useEffect(() => {
+        async function load() {
+            try {
+                if (id) {
+                    const data = await fetchParticulate(id);
+                    setParticulate(data);
+                }
+            } catch (e: any) {
+                setError(e.message);
+            } finally {
+                setLoading(false);
+            }
+        }
+        load();
+    }, [id]);
+
+    if (loading) return <div className="container mt-4">Loading...</div>;
+    if (error) return <div className="container mt-4 text-danger">{error}</div>;
+    if (!particulate) return <div className="container mt-4">Not found</div>;
+
+    // Helper to display enum name from index
+    const getTypeName = (type: any) => {
+        if (typeof type === 'number' && types.length > type) return types[type];
+        if (typeof type === 'string') {
+            const idx = Number(type);
+            if (!isNaN(idx) && types.length > idx) return types[idx];
+            return type;
+        }
+        return type;
+    };
+    const getStatusName = (status: any) => {
+        if (typeof status === 'number' && statuses.length > status) return statuses[status];
+        if (typeof status === 'string') {
+            const idx = Number(status);
+            if (!isNaN(idx) && statuses.length > idx) return statuses[idx];
+            return status;
+        }
+        return status;
+    };
+
+    return (
+        <div className="container mt-4">
+            <h2>Particulate Detail</h2>
+            <div className="mb-3">
+                <strong>Name:</strong> {particulate.name}<br />
+                <strong>Alias:</strong> {particulate.alias}<br />
+                <strong>Type:</strong> {getTypeName(particulate.type)}<br />
+                <strong>Status:</strong> {getStatusName(particulate.detectionStatus)}<br />
+                <strong>Notes:</strong> {particulate.detectionNotes}<br />
+            </div>
+            <div className="mb-3">
+                <h4>History</h4>
+                <table className="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {particulate.history?.map(h => (
+                            <tr key={h.id}>
+                                <td>{new Date(h.date).toLocaleString()}</td>
+                                <td>{getTypeName(h.type)}</td>
+                                <td>{getStatusName(h.status)}</td>
+                                <td>{h.notes}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            <Link to={`/edit/${particulate.id}`} className="btn btn-warning btn-sm me-2">Edit</Link>
+            <Link to="/" className="btn btn-secondary btn-sm ms-2">Back to List</Link>
+        </div>
+    );
+};
+
+export default ParticulateDetail;

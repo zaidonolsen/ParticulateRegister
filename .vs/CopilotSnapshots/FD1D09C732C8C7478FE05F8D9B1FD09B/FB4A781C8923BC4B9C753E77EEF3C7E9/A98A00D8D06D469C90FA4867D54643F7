@@ -1,0 +1,10 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace ParticulateRegister.Domain.Models
+{
+    public class ParticulateCreateDto : ParticulateBaseDto
+    {
+        // No additional properties
+    }
+}

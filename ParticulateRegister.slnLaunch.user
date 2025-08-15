@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "ParticulateRegister.Server\\ParticulateRegister.Server.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "particulateregister.client\\particulateregister.client.esproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -1,0 +1,57 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using ParticulateRegister.Domain.Interfaces;
+using ParticulateRegister.Domain.Models;
+
+namespace ParticulateRegister.Server.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ParticulatesController : ControllerBase
+    {
+        private readonly IParticulateService _service;
+
+        public ParticulatesController(IParticulateService service)
+        {
+            _service = service;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var particulates = await _service.GetAllAsync();
+            return Ok(particulates);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var particulate = await _service.GetByIdAsync(id);
+            if (particulate == null) return NotFound();
+            return Ok(particulate);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] ParticulateCreateDto dto)
+        {
+            await _service.AddAsync(dto);
+            // Return the created entity (service should map and return ParticulateDto)
+            var created = await _service.GetByIdAsync(dto.Name); // You may need to adjust this to get the created entity
+            return CreatedAtAction(nameof(GetById), new { id = created?.Id }, created);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] ParticulateUpdateDto dto)
+        {
+            if (id != dto.Id) return BadRequest();
+            await _service.UpdateAsync(dto);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _service.DeleteAsync(id);
+            return NoContent();
+        }
+    }
+}

@@ -1,0 +1,17 @@
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\obj\Debug\net7.0\ParticulateRegister.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\obj\Debug\net7.0\ParticulateRegister.Data.AssemblyInfoInputs.cache
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\obj\Debug\net7.0\ParticulateRegister.Data.AssemblyInfo.cs
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\obj\Debug\net7.0\ParticulateRegister.Data.csproj.CoreCompileInputs.cache
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\bin\Debug\net7.0\ParticulateRegister.Data.deps.json
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\bin\Debug\net7.0\ParticulateRegister.Data.dll
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\bin\Debug\net7.0\ParticulateRegister.Data.pdb
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\obj\Debug\net7.0\ParticulateRegister.Data.csproj.AssemblyReference.cache
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\obj\Debug\net7.0\ParticulateRegister.Data.dll
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\obj\Debug\net7.0\refint\ParticulateRegister.Data.dll
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\obj\Debug\net7.0\ParticulateRegister.Data.pdb
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\obj\Debug\net7.0\ref\ParticulateRegister.Data.dll
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\bin\Debug\net7.0\ParticulateRegister.Domain.dll
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\bin\Debug\net7.0\ParticulateRegister.Domain.pdb
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\obj\Debug\net7.0\Particul.00E6FB28.Up2Date
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\bin\Debug\net7.0\ParticulateRegister.Contracts.dll
+C:\Workspace\ParticulateRegister\ParticulateRegister.Data\bin\Debug\net7.0\ParticulateRegister.Contracts.pdb

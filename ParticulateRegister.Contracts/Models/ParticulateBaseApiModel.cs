@@ -1,0 +1,17 @@
+using ParticulateRegister.Contracts.Enums;
+
+namespace ParticulateRegister.Contracts.Models
+{
+    public abstract class ParticulateBaseApiModel
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Alias { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public List<string> CropAssociations { get; set; } = new();
+        public List<string> RegionAssociations { get; set; } = new();
+        public List<string> SeasonalAssociations { get; set; } = new();
+        public ParticulateType Type { get; set; }
+        public DetectionStatus DetectionStatus { get; set; }
+        public string DetectionNotes { get; set; } = string.Empty;
+    }
+}

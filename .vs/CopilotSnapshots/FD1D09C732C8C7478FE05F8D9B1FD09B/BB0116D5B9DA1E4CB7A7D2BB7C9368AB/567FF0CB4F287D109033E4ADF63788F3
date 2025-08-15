@@ -1,0 +1,17 @@
+﻿using System.Collections.Generic;
+
+namespace ParticulateRegister.Domain.Models
+{
+    public abstract class ParticulateBaseDto
+    {
+        public string Name { get; set; } = string.Empty;
+        public List<string> Aliases { get; set; } = new();
+        public string Description { get; set; } = string.Empty;
+        public List<string> CropAssociations { get; set; } = new();
+        public List<string> RegionAssociations { get; set; } = new();
+        public List<string> SeasonalAssociations { get; set; } = new();
+        public ParticulateType Type { get; set; }
+        public DetectionStatus DetectionStatus { get; set; }
+        public string DetectionNotes { get; set; } = string.Empty;
+    }
+}

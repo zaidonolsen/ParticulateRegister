@@ -1,0 +1,40 @@
+using ParticulateRegister.Data;
+using Microsoft.EntityFrameworkCore;
+using ParticulateRegister.Domain.Interfaces;
+using ParticulateRegister.Data.Repositories;
+using ParticulateRegister.Domain.Services;
+using ParticulateRegister.Domain.Mapping;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddControllers();
+builder.Services.AddDbContext<ParticulateDbContext>(options =>
+    options.UseInMemoryDatabase("ParticulateDb"));
+builder.Services.AddScoped<IParticulateRepository, ParticulateRepository>();
+builder.Services.AddScoped<IParticulateService, ParticulateService>();
+builder.Services.AddAutoMapper(typeof(ParticulateApiMappingProfile));
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.MapFallbackToFile("/index.html");
+
+app.Run();

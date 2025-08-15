@@ -1,0 +1,44 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using ParticulateRegister.Domain.Models;
+using System.Text.Json;
+
+namespace ParticulateRegister.Data
+{
+    public class ParticulateDbContext : DbContext
+    {
+        public ParticulateDbContext(DbContextOptions<ParticulateDbContext> options) : base(options) { }
+
+        public DbSet<ParticulateDto> Particulates { get; set; }
+        public DbSet<ParticulateHistoryDto> ParticulateHistories { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            var stringListConverter = new ValueConverter<List<string>, string>(
+                v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
+                v => JsonSerializer.Deserialize<List<string>>(v, (JsonSerializerOptions)null) ?? new List<string>()
+            );
+
+            modelBuilder.Entity<ParticulateDto>()
+                .Property(p => p.Aliases)
+                .HasConversion(stringListConverter);
+
+            modelBuilder.Entity<ParticulateDto>()
+                .Property(p => p.CropAssociations)
+                .HasConversion(stringListConverter);
+
+            modelBuilder.Entity<ParticulateDto>()
+                .Property(p => p.RegionAssociations)
+                .HasConversion(stringListConverter);
+
+            modelBuilder.Entity<ParticulateDto>()
+                .Property(p => p.SeasonalAssociations)
+                .HasConversion(stringListConverter);
+
+            modelBuilder.Entity<ParticulateDto>()
+                .HasMany(p => p.History)
+                .WithOne()
+                .HasForeignKey(h => h.ParticulateId);
+        }
+    }
+}

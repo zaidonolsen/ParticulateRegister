@@ -1,0 +1,63 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using ParticulateRegister.Domain.Interfaces;
+using ParticulateRegister.Domain.Models;
+using ParticulateRegister.Contracts.Models;
+using AutoMapper;
+
+namespace ParticulateRegister.Server.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ParticulatesController : ControllerBase
+    {
+        private readonly IParticulateService _service;
+        private readonly IMapper _mapper;
+
+        public ParticulatesController(IParticulateService service, IMapper mapper)
+        {
+            _service = service;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var particulates = await _service.GetAllAsync();
+            return Ok(particulates);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var particulate = await _service.GetByIdAsync(id);
+            if (particulate == null) return NotFound();
+            return Ok(particulate);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] ParticulateCreateApiModel apiModel)
+        {
+            var particulate = _mapper.Map<ParticulateDto>(apiModel);
+            await _service.AddAsync(particulate);
+            var created = (await _service.GetAllAsync()).FirstOrDefault(x => x.Name == apiModel.Name);
+            return CreatedAtAction(nameof(GetById), new { id = created?.Id }, created);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] ParticulateUpdateApiModel apiModel)
+        {
+            if (id != apiModel.Id) return BadRequest();
+            var particulate = _mapper.Map<ParticulateDto>(apiModel);
+            particulate.Id = id;
+            await _service.UpdateAsync(particulate);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _service.DeleteAsync(id);
+            return NoContent();
+        }
+    }
+}

@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using ParticulateRegister.Data.Models;
+
+namespace ParticulateRegister.Data.Repositories
+{
+    public interface IParticulateRepository
+    {
+        Task<IEnumerable<Particulate>> GetAllAsync();
+        Task<Particulate?> GetByIdAsync(Guid id);
+        Task AddAsync(Particulate particulate);
+        Task UpdateAsync(Particulate particulate);
+        Task DeleteAsync(Guid id);
+        Task SaveChangesAsync();
+    }
+}

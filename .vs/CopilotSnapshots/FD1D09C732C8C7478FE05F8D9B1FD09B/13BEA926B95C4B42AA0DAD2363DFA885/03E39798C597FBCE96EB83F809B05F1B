@@ -1,0 +1,23 @@
+﻿using Microsoft.EntityFrameworkCore;
+using ParticulateRegister.Data.Models;
+
+namespace ParticulateRegister.Data
+{
+    public class ParticulateDbContext : DbContext
+    {
+        public ParticulateDbContext(DbContextOptions<ParticulateDbContext> options) : base(options) { }
+
+        public DbSet<Particulate> Particulates { get; set; }
+        public DbSet<ParticulateHistory> ParticulateHistories { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Particulate>()
+                .HasMany(p => p.History)
+                .WithOne()
+                .HasForeignKey(h => h.ParticulateId);
+
+            // Configure value conversions for List<string> properties if needed
+        }
+    }
+}

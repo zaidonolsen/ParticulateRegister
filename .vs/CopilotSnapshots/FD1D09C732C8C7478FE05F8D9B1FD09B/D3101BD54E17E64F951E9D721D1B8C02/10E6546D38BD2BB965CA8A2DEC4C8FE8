@@ -1,0 +1,24 @@
+﻿using ParticulateRegister.Data.Models;
+using ParticulateRegister.Data.Repositories;
+using ParticulateRegister.Domain.Interfaces;
+using ParticulateRegister.Domain.Models;
+
+namespace ParticulateRegister.Domain.Services
+{
+    public class ParticulateService : IParticulateService
+    {
+        private readonly IParticulateRepository _repository;
+
+        public ParticulateService(IParticulateRepository repository)
+        {
+            _repository = repository;
+        }
+
+        public Task<IEnumerable<ParticulateDto>> GetAllAsync() => _repository.GetAllAsync();
+        public Task<ParticulateDto?> GetByIdAsync(Guid id) => _repository.GetByIdAsync(id);
+        public Task AddAsync(ParticulateDto particulate) => _repository.AddAsync(particulate);
+        public Task UpdateAsync(ParticulateDto particulate) => _repository.UpdateAsync(particulate);
+        public Task DeleteAsync(Guid id) => _repository.DeleteAsync(id);
+        public Task SaveChangesAsync() => _repository.SaveChangesAsync();
+    }
+}
