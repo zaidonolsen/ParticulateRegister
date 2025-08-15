@@ -31,7 +31,7 @@ Particulate Register is a full-stack web application for managing and tracking p
 
 - Register, view, edit, and delete particulates.
 - Track particulate type and detection status (enum-based).
-- Maintain history of status/type changes.
+- Maintain history of status/type/notes changes.
 - Search and filter particulates in the client UI.
 - Responsive and modern UI with improved layout and accessibility.
 
@@ -58,11 +58,6 @@ Particulate Register is a full-stack web application for managing and tracking p
 - `DELETE /api/particulates/{id}` - Delete a particulate
 - `GET /api/enums/particulate-types` - Get particulate types
 - `GET /api/enums/detection-statuses` - Get detection statuses
-
-## Development Notes
-- Enum values are mapped between backend (number) and frontend (string) for user-friendly display.
-- History tracking is automatic on status/type/note changes.
-- UI components are styled for clarity and accessibility.
 
 ## Assumptions
 - The application is intended as a proof of concept and uses an in-memory database for backend storage.
