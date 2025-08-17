@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Server\\ParticulateRegister.Server.csproj": {}
+    "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Server\\ParticulateRegister.Server.csproj": {}
   },
   "projects": {
-    "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj": {
+    "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj",
         "projectName": "ParticulateRegister.Contracts",
-        "projectPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj",
+        "projectPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj",
         "packagesPath": "C:\\Users\\61411\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Contracts\\obj\\",
+        "outputPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,14 +70,14 @@
         }
       }
     },
-    "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj": {
+    "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj",
+        "projectUniqueName": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj",
         "projectName": "ParticulateRegister.Data",
-        "projectPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj",
+        "projectPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj",
         "packagesPath": "C:\\Users\\61411\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Data\\obj\\",
+        "outputPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -99,8 +99,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj": {
-                "projectPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj"
+              "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj": {
+                "projectPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj"
               }
             }
           }
@@ -154,14 +154,14 @@
         }
       }
     },
-    "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj": {
+    "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj",
         "projectName": "ParticulateRegister.Domain",
-        "projectPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj",
+        "projectPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj",
         "packagesPath": "C:\\Users\\61411\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Domain\\obj\\",
+        "outputPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -183,8 +183,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj": {
-                "projectPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj"
+              "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj": {
+                "projectPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj"
               }
             }
           }
@@ -230,14 +230,14 @@
         }
       }
     },
-    "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Server\\ParticulateRegister.Server.csproj": {
+    "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Server\\ParticulateRegister.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Server\\ParticulateRegister.Server.csproj",
+        "projectUniqueName": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Server\\ParticulateRegister.Server.csproj",
         "projectName": "ParticulateRegister.Server",
-        "projectPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Server\\ParticulateRegister.Server.csproj",
+        "projectPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Server\\ParticulateRegister.Server.csproj",
         "packagesPath": "C:\\Users\\61411\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Server\\obj\\",
+        "outputPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -259,14 +259,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj": {
-                "projectPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj"
+              "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj": {
+                "projectPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj"
               },
-              "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj": {
-                "projectPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj"
+              "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj": {
+                "projectPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj"
               },
-              "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj": {
-                "projectPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj"
+              "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj": {
+                "projectPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj"
               }
             }
           }

@@ -1,0 +1,6 @@
+.vs/
+particulateregister.client/node_modules/
+ParticulateRegister.Data/obj/
+ParticulateRegister.Domain/obj/
+ParticulateRegister.Server/obj/
+ParticulateRegister.Contracts/obj/

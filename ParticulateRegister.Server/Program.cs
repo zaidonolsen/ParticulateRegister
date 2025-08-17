@@ -19,6 +19,13 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Seed the in-memory database
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ParticulateDbContext>();
+    ParticulateDbSeeder.Seed(db);
+}
+
 app.UseDefaultFiles();
 app.UseStaticFiles();
 

@@ -665,11 +665,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj",
+      "projectUniqueName": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj",
       "projectName": "ParticulateRegister.Data",
-      "projectPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj",
+      "projectPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj",
       "packagesPath": "C:\\Users\\61411\\.nuget\\packages\\",
-      "outputPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Data\\obj\\",
+      "outputPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -691,8 +691,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj": {
-              "projectPath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj"
+            "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj": {
+              "projectPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj"
             }
           }
         }

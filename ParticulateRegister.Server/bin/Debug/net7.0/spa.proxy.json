@@ -2,7 +2,7 @@
 "SpaProxyServer": {
 "ServerUrl": "https://localhost:54960",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Server\\..\\particulateregister.client",
+"WorkingDirectory": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Server\\..\\particulateregister.client",
 "MaxTimeoutInSeconds": "120"
 }
 }

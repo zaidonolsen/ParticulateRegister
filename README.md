@@ -46,6 +46,17 @@ Particulate Register is a full-stack web application for managing and tracking p
 - [Node.js & npm](https://nodejs.org/)
 - [Visual Studio 2022 or later](https://visualstudio.microsoft.com/)
 
+## Frontend (npm) Setup
+
+Before running the solution, you must install the required npm modules for the frontend project:
+
+```sh
+cd particulateregister.client
+npm install
+```
+
+This will install all dependencies listed in `package.json` for the React frontend. After installation, you can run the solution as normal.
+
 ## Running the Solution
 - Open the solution in **Visual Studio** and press `F5` to start both backend and frontend projects automatically.
 - Alternatively, use the command line to run backend (`dotnet run`) and frontend (`npm run dev`) projects separately.

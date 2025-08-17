@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T1nJHSAap3k=",
+  "dgSpecHash": "DH8IWk9mUZ8=",
   "success": true,
-  "projectFilePath": "C:\\Workspace\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj",
+  "projectFilePath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateRegister.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\61411\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\61411\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.20\\microsoft.entityframeworkcore.7.0.20.nupkg.sha512",
