@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { createParticulate, updateParticulate, fetchParticulate } from '../api/particulates';
 import { fetchParticulateTypes, fetchDetectionStatuses } from '../api/enums';
@@ -25,6 +25,7 @@ const ParticulateForm: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [types, setTypes] = useState<string[]>([]);
     const [statuses, setStatuses] = useState<string[]>([]);
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
     // Local string states for comma-separated input
     const [cropInput, setCropInput] = useState('');
     const [regionInput, setRegionInput] = useState('');
@@ -87,19 +88,24 @@ const ParticulateForm: React.FC = () => {
         // Map type and detectionStatus to their enum index
         const typeIndex = types.indexOf(form.type || "");
         const statusIndex = statuses.indexOf(form.detectionStatus || "");
-        const payload = {
-            ...form,
-            type: typeIndex,
-            detectionStatus: statusIndex,
-            cropAssociations,
-            regionAssociations,
-            seasonalAssociations,
-        };
+        const formData = new FormData();
+        formData.append('name', form.name || '');
+        formData.append('alias', form.alias || '');
+        formData.append('type', typeIndex.toString());
+        formData.append('detectionStatus', statusIndex.toString());
+        formData.append('detectionNotes', form.detectionNotes || '');
+        formData.append('description', form.description || '');
+        cropAssociations.forEach((v, i) => formData.append(`cropAssociations[${i}]`, v));
+        regionAssociations.forEach((v, i) => formData.append(`regionAssociations[${i}]`, v));
+        seasonalAssociations.forEach((v, i) => formData.append(`seasonalAssociations[${i}]`, v));
+        if (fileInputRef.current && fileInputRef.current.files && fileInputRef.current.files.length > 0) {
+            formData.append('file', fileInputRef.current.files[0]);
+        }
         try {
             if (id) {
-                await updateParticulate(id, payload);
+                await updateParticulate(id, formData); // You may need to update this API to accept FormData
             } else {
-                await createParticulate(payload);
+                await createParticulate(formData);
             }
             await refresh();
             navigate('/');
@@ -114,7 +120,7 @@ const ParticulateForm: React.FC = () => {
         <div className="container mt-4">
             <h2>{id ? 'Edit' : 'Register'} Particulate</h2>
             {error && <div className="alert alert-danger">{error}</div>}
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <div className="mb-3">
                     <label className="form-label">Name</label>
                     <input name="name" className="form-control" value={form.name || ''} onChange={handleChange} required />
@@ -152,6 +158,10 @@ const ParticulateForm: React.FC = () => {
                 <div className="mb-3">
                     <label className="form-label">Notes</label>
                     <textarea name="detectionNotes" className="form-control" value={form.detectionNotes || ''} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">File</label>
+                    <input type="file" name="file" className="form-control" ref={fileInputRef} />
                 </div>
                 <button className="btn btn-primary" type="submit" disabled={loading}>{id ? 'Update' : 'Register'}</button>
                 <button className="btn btn-secondary ms-2" type="button" onClick={() => navigate('/')}>Cancel</button>

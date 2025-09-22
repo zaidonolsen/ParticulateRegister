@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F9A771BD-C4C8-4F00-BEB9-41031688F8A0}|ParticulateRegister.Server\\ParticulateRegister.Server.csproj|c:\\users\\61411\\downloads\\particulateregister\\particulateregister.server\\controllers\\particulatescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9A771BD-C4C8-4F00-BEB9-41031688F8A0}|ParticulateRegister.Server\\ParticulateRegister.Server.csproj|solutionrelative:particulateregister.server\\controllers\\particulatescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D160A807-640C-0AB2-EF5C-A41ADB8D36A5}|particulateregister.client\\particulateregister.client.esproj|c:\\users\\61411\\downloads\\particulateregister\\particulateregister.client\\src\\api\\particulates.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{D160A807-640C-0AB2-EF5C-A41ADB8D36A5}|particulateregister.client\\particulateregister.client.esproj|solutionrelative:particulateregister.client\\src\\api\\particulates.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9A771BD-C4C8-4F00-BEB9-41031688F8A0}|ParticulateRegister.Server\\ParticulateRegister.Server.csproj|c:\\users\\61411\\downloads\\particulateregister\\particulateregister.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9A771BD-C4C8-4F00-BEB9-41031688F8A0}|ParticulateRegister.Server\\ParticulateRegister.Server.csproj|solutionrelative:particulateregister.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A57F74E-99CA-4A7D-8BF0-45444328797C}|ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj|c:\\users\\61411\\downloads\\particulateregister\\particulateregister.domain\\models\\particulatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A57F74E-99CA-4A7D-8BF0-45444328797C}|ParticulateRegister.Domain\\ParticulateRegister.Domain.csproj|solutionrelative:particulateregister.domain\\models\\particulatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67A9A81-EB71-48BE-961F-C6EEC19F801D}|ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj|c:\\users\\61411\\downloads\\particulateregister\\particulateregister.contracts\\models\\particulatecreateapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67A9A81-EB71-48BE-961F-C6EEC19F801D}|ParticulateRegister.Contracts\\ParticulateRegister.Contracts.csproj|solutionrelative:particulateregister.contracts\\models\\particulatecreateapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D160A807-640C-0AB2-EF5C-A41ADB8D36A5}|particulateregister.client\\particulateregister.client.esproj|c:\\users\\61411\\downloads\\particulateregister\\particulateregister.client\\src\\components\\particulateform.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{D160A807-640C-0AB2-EF5C-A41ADB8D36A5}|particulateregister.client\\particulateregister.client.esproj|solutionrelative:particulateregister.client\\src\\components\\particulateform.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D160A807-640C-0AB2-EF5C-A41ADB8D36A5}|particulateregister.client\\particulateregister.client.esproj|c:\\users\\61411\\downloads\\particulateregister\\particulateregister.client\\src\\components\\particulatedetail.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{D160A807-640C-0AB2-EF5C-A41ADB8D36A5}|particulateregister.client\\particulateregister.client.esproj|solutionrelative:particulateregister.client\\src\\components\\particulatedetail.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{331E9F17-9C6A-4B21-9368-8D653F676369}|ParticulateRegister.Data\\ParticulateRegister.Data.csproj|c:\\users\\61411\\downloads\\particulateregister\\particulateregister.data\\repositories\\particulaterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{331E9F17-9C6A-4B21-9368-8D653F676369}|ParticulateRegister.Data\\ParticulateRegister.Data.csproj|solutionrelative:particulateregister.data\\repositories\\particulaterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,20 +58,110 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ParticulateRepository.cs",
-              "DocumentMoniker": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\Repositories\\ParticulateRepository.cs",
-              "RelativeDocumentMoniker": "ParticulateRegister.Data\\Repositories\\ParticulateRepository.cs",
-              "ToolTip": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\Repositories\\ParticulateRepository.cs",
-              "RelativeToolTip": "ParticulateRegister.Data\\Repositories\\ParticulateRepository.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAowCoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Server\\Program.cs",
+              "RelativeDocumentMoniker": "ParticulateRegister.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Server\\Program.cs",
+              "RelativeToolTip": "ParticulateRegister.Server\\Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T00:36:54.431Z",
+              "WhenOpened": "2025-09-01T04:39:45.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ParticulateCreateApiModel.cs",
+              "DocumentMoniker": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Contracts\\Models\\ParticulateCreateApiModel.cs",
+              "RelativeDocumentMoniker": "ParticulateRegister.Contracts\\Models\\ParticulateCreateApiModel.cs",
+              "ToolTip": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Contracts\\Models\\ParticulateCreateApiModel.cs",
+              "RelativeToolTip": "ParticulateRegister.Contracts\\Models\\ParticulateCreateApiModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T04:38:25.122Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "particulates.ts",
+              "DocumentMoniker": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\particulateregister.client\\src\\api\\particulates.ts",
+              "RelativeDocumentMoniker": "particulateregister.client\\src\\api\\particulates.ts",
+              "ToolTip": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\particulateregister.client\\src\\api\\particulates.ts",
+              "RelativeToolTip": "particulateregister.client\\src\\api\\particulates.ts",
+              "ViewState": "AgIAAAMAAAAAAAAAAAArwA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T04:18:19.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ParticulateDto.cs",
+              "DocumentMoniker": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\Models\\ParticulateDto.cs",
+              "RelativeDocumentMoniker": "ParticulateRegister.Domain\\Models\\ParticulateDto.cs",
+              "ToolTip": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Domain\\Models\\ParticulateDto.cs",
+              "RelativeToolTip": "ParticulateRegister.Domain\\Models\\ParticulateDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAawBMAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T04:17:33.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ParticulatesController.cs",
+              "DocumentMoniker": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Server\\Controllers\\ParticulatesController.cs",
+              "RelativeDocumentMoniker": "ParticulateRegister.Server\\Controllers\\ParticulatesController.cs",
+              "ToolTip": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Server\\Controllers\\ParticulatesController.cs",
+              "RelativeToolTip": "ParticulateRegister.Server\\Controllers\\ParticulatesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T04:12:05.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ParticulateForm.tsx",
+              "DocumentMoniker": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\particulateregister.client\\src\\components\\ParticulateForm.tsx",
+              "RelativeDocumentMoniker": "particulateregister.client\\src\\components\\ParticulateForm.tsx",
+              "ToolTip": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\particulateregister.client\\src\\components\\ParticulateForm.tsx",
+              "RelativeToolTip": "particulateregister.client\\src\\components\\ParticulateForm.tsx",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAUwGMAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T04:18:00.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ParticulateDetail.tsx",
+              "DocumentMoniker": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\particulateregister.client\\src\\components\\ParticulateDetail.tsx",
+              "RelativeDocumentMoniker": "particulateregister.client\\src\\components\\ParticulateDetail.tsx",
+              "ToolTip": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\particulateregister.client\\src\\components\\ParticulateDetail.tsx",
+              "RelativeToolTip": "particulateregister.client\\src\\components\\ParticulateDetail.tsx",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T04:19:15.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ParticulateRepository.cs",
+              "DocumentMoniker": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\Repositories\\ParticulateRepository.cs",
+              "RelativeDocumentMoniker": "ParticulateRegister.Data\\Repositories\\ParticulateRepository.cs",
+              "ToolTip": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\Repositories\\ParticulateRepository.cs",
+              "RelativeToolTip": "ParticulateRegister.Data\\Repositories\\ParticulateRepository.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwCwAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T00:36:54.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ParticulateDbContext.cs",
               "DocumentMoniker": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Data\\ParticulateDbContext.cs",
               "RelativeDocumentMoniker": "ParticulateRegister.Data\\ParticulateDbContext.cs",
@@ -51,8 +169,7 @@
               "RelativeToolTip": "ParticulateRegister.Data\\ParticulateDbContext.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAkwCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T00:20:38.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-17T00:20:38.958Z"
             }
           ]
         }

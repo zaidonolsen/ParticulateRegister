@@ -17,5 +17,6 @@ namespace ParticulateRegister.Domain.Models
         public DetectionStatus DetectionStatus { get; set; }
         public string DetectionNotes { get; set; } = string.Empty;
         public List<ParticulateHistoryDto> History { get; set; } = new();
+        public string? FilePath { get; set; } // Store uploaded file path
     }
 }

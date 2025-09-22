@@ -13,21 +13,19 @@ export async function fetchParticulate(id: string): Promise<Particulate> {
     return await res.json();
 }
 
-export async function createParticulate(data: Partial<Particulate>): Promise<Particulate> {
+export async function createParticulate(data: FormData): Promise<any> {
     const res = await fetch('/api/particulates', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: data
     });
     if (!res.ok) throw new Error('Failed to create particulate');
     return await res.json();
 }
 
-export async function updateParticulate(id: string, data: Partial<Particulate>): Promise<void> {
+export async function updateParticulate(id: string, data: FormData): Promise<void> {
     const res = await fetch(`/api/particulates/${id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: data
     });
     if (!res.ok) throw new Error('Failed to update particulate');
 }

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "CgP1Hgn985k=",
+  "dgSpecHash": "jAxvkvOLGro=",
   "success": true,
   "projectFilePath": "C:\\Users\\61411\\Downloads\\ParticulateRegister\\ParticulateRegister.Server\\ParticulateRegister.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\61411\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\61411\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\61411\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.19\\microsoft.aspnetcore.openapi.7.0.19.nupkg.sha512",
     "C:\\Users\\61411\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\7.0.20\\microsoft.aspnetcore.spaproxy.7.0.20.nupkg.sha512",
     "C:\\Users\\61411\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.20\\microsoft.entityframeworkcore.7.0.20.nupkg.sha512",
@@ -25,7 +26,8 @@
     "C:\\Users\\61411\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\61411\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\61411\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
-    "C:\\Users\\61411\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+    "C:\\Users\\61411\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
+    "C:\\Users\\61411\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }
